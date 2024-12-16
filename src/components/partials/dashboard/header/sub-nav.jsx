@@ -1,12 +1,10 @@
-import { useState, Fragment } from "react";
+import {Fragment, useState} from "react";
 
 // react-bootstrap
-import { Nav, Dropdown, Image, Button, Collapse } from "react-bootstrap";
+import {Button, Dropdown, Image, Nav} from "react-bootstrap";
 
 // recat-router
-import { Link, useLocation, useNavigate } from "react-router-dom";
-
-
+import {Link, useLocation, useNavigate} from "react-router-dom";
 
 
 //component
@@ -19,29 +17,25 @@ import img2 from "/assets/images/shapes/02.png";
 import img3 from "/assets/images/shapes/03.png";
 import img4 from "/assets/images/shapes/04.png";
 import avatar1 from "/assets/images/avatars/01.png";
+import avatar_1 from "/assets/images/avatars/01.png";
 import avatar2 from "/assets/images/avatars/02.png";
 import avatar3 from "/assets/images/avatars/03.png";
 import avatar4 from "/assets/images/avatars/04.png";
-import avatar_1 from "/assets/images/avatars/01.png";
 
 // Redux Selector / Action
-import { useDispatch } from "react-redux";
+import {useDispatch} from "react-redux";
 
 // Import selectors & action from setting store
+import {DashboardRouter} from "../../../../router/dashboard";
 
-import { DashboardRouter } from "../../../../router/dashboard";
-
-import {
-  setSetting,
-  theme_scheme,
-  theme_scheme_direction,
-} from "../../../../store/setting/actions";
+import {theme_scheme, theme_scheme_direction,} from "../../../../store/setting/actions";
 
 // the hook
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 
 const SubNav = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   // dispatch(setSetting());
 
   //for translation
@@ -55,6 +49,35 @@ const SubNav = (props) => {
       dispatch(theme_scheme_direction("ltr"));
     }
   };
+
+  const handleLogout = () => {
+    try {
+      // Clear all user data
+      localStorage.clear(); // Clear local storage
+      sessionStorage.clear(); // Clear session storage
+      document.cookie.split(";").forEach((cookie) => {
+        const cookieName = cookie.split("=")[0].trim();
+        document.cookie = `${cookieName}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;`;
+      });
+
+      // Destroy ApexCharts instances
+      if (window.ApexCharts) {
+        Object.keys(window.ApexCharts._chartInstances || {}).forEach((chartId) => {
+          try {
+            window.ApexCharts.exec(chartId, "destroy");
+          } catch (error) {
+            console.warn(`Chart with id "${chartId}" could not be destroyed.`, error);
+          }
+        });
+      }
+
+      // Redirect to sign-in page
+      navigate("/auth/sign-in", { replace: true });
+    } catch (error) {
+      console.error("An error occurred during logout process:", error);
+    }
+  };
+
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
   //fullscreen
@@ -745,7 +768,7 @@ const SubNav = (props) => {
                 {t("header.privacy_setting")}
               </Dropdown.Item>
               <hr className="dropdown-divider" />
-              <Dropdown.Item onClick={() => history("/auth/sign-in")} href="#">
+              <Dropdown.Item onClick={handleLogout}>
                 {t("header.logout")}
               </Dropdown.Item>
             </Dropdown.Menu>

@@ -65,18 +65,13 @@ import FontAwesome from "../views/dashboard/icons/font-awesome";
 import Accesscontrol from "../views/dashboard/Accesscontrol";
 import PrivacyPolicy from "../views/dashboard/extra/privacy-policy";
 import TermsofService from "../views/dashboard/extra/terms-of-service";
-import {Navigate} from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 
 export const DashboardRouter = [
   {
     path: "",
-    element: <DashboardLayout />,
-    children: [
-      {
-        path: "/",
-        element: <Navigate to="/auth/sign-in" replace />,
-      },
+    element: <ProtectedRoute element={<DashboardLayout />} />,
+    children: [,
       {
         path: "/home",
         element: <ProtectedRoute element={<Dashboard />} />,
@@ -88,7 +83,6 @@ export const DashboardRouter = [
         path: "/rating-page",
         element: <ProtectedRoute element={<RatingPaage />} />,
         name: 'Rating'
-
       },
       {
         path: "/comment-list",
