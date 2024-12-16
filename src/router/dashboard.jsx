@@ -77,7 +77,7 @@ export const DashboardRouter = [
         element: <Navigate to="/auth/sign-in" replace />,
       },
       {
-        path: "/",
+        path: "/home",
         element: <Dashboard />,
         name: 'home',
         Activelink: 'home'
