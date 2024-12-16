@@ -65,12 +65,17 @@ import FontAwesome from "../views/dashboard/icons/font-awesome";
 import Accesscontrol from "../views/dashboard/Accesscontrol";
 import PrivacyPolicy from "../views/dashboard/extra/privacy-policy";
 import TermsofService from "../views/dashboard/extra/terms-of-service";
+import {Navigate} from "react-router-dom";
 
 export const DashboardRouter = [
   {
     path: "",
     element: <DashboardLayout />,
     children: [
+      {
+        path: "/",
+        element: <Navigate to="/auth/sign-in" replace />,
+      },
       {
         path: "/",
         element: <Dashboard />,
@@ -379,6 +384,7 @@ export const ErrorRoutes = [
     ],
   },
 ];
+
 export const AuthRuter = [
   {
     path: "/auth",
