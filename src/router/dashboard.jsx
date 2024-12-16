@@ -66,6 +66,7 @@ import Accesscontrol from "../views/dashboard/Accesscontrol";
 import PrivacyPolicy from "../views/dashboard/extra/privacy-policy";
 import TermsofService from "../views/dashboard/extra/terms-of-service";
 import {Navigate} from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute.jsx";
 
 export const DashboardRouter = [
   {
@@ -78,236 +79,236 @@ export const DashboardRouter = [
       },
       {
         path: "/home",
-        element: <Dashboard />,
+        element: <ProtectedRoute element={<Dashboard />} />,
         name: 'home',
         Activelink: 'home'
       },
 
       {
         path: "/rating-page",
-        element: <RatingPaage />,
+        element: <ProtectedRoute element={<RatingPaage />} />,
         name: 'Rating'
 
       },
       {
         path: "/comment-list",
-        element: <CommentList />,
+        element: <ProtectedRoute element={<CommentList />} />,
         name: 'Comment List'
 
       },
 
       {
         path: "/special-pages/pricing",
-        element: <Pricing />,
+        element: <ProtectedRoute element={<Pricing />} />,
         name: 'Pricing'
 
       },
       {
         path: "/app/user-profile",
-        element: <UserProfile />,
+        element: <ProtectedRoute element={<UserProfile />} />,
         name: 'User Profile'
       },
       {
         path: "/app/user-privacy-setting",
-        element: <UserProfileEdit />,
+        element: <ProtectedRoute element={<UserProfileEdit />} />,
 
       },
       {
         path: "/app/user-add",
-        element: <UserAdd />,
+        element: <ProtectedRoute element={<UserAdd />} />,
       },
       {
         path: "/app/user-list",
-        element: <UserList />,
+        element: <ProtectedRoute element={<UserList />} />,
         name: 'User List'
       },
 
       {
         path: "/ui-elements/avatars",
-        element: <Avatars />,
+        element: <ProtectedRoute element={<Avatars />} />,
         name: 'Ui-Avatars'
       },
 
       {
         path: "/ui-elements/alerts",
-        element: <Alerts />,
+        element: <ProtectedRoute element={<Alerts />} />,
         name: 'Ui-Alert'
       },
       {
         path: "/ui-elements/badges",
-        element: <Badges />,
+        element: <ProtectedRoute element={<Badges />} />,
         name: 'Ui-Badge'
 
       },
       {
         path: "/ui-elements/breadcrumb",
-        element: <Breadcrumb />,
+        element: <ProtectedRoute element={<Breadcrumb />} />,
         name: 'Ui-Breadcrumb'
       },
       {
         path: "/ui-elements/buttons",
-        element: <Buttons />,
+        element: <ProtectedRoute element={<Buttons />} />,
         name: 'Ui-Buttons'
       },
       {
         path: "/ui-elements/button-group",
-        element: <ButtonGroups />,
+        element: <ProtectedRoute element={<ButtonGroups />} />,
         name: 'Ui-Button-Group'
       },
       {
         path: "/ui-elements/offcanvas",
-        element: <OffCanvass />,
+        element: <ProtectedRoute element={<OffCanvass />} />,
         name: 'Ui-Offcanvas'
       },
       {
         path: "/ui-elements/color",
-        element: <Colors />,
+        element: <ProtectedRoute element={<Colors />} />,
         name: 'Ui-Color'
       },
       {
         path: "/ui-elements/cards",
-        element: <Cards />,
+        element: <ProtectedRoute element={<Cards />} />,
         name: 'Ui-Card'
 
       },
       {
         path: "/ui-elements/carousel",
-        element: <Carousels />,
+        element: <ProtectedRoute element={<Carousels />} />,
         name: 'Ui-Carousel'
       },
       {
         path: "/ui-elements/grid",
-        element: <Grids />,
+        element: <ProtectedRoute element={<Grids />} />,
         name: 'Ui-Grid'
 
       },
       {
         path: "/ui-elements/images",
-        element: <Images />,
+        element: <ProtectedRoute element={<Images />} />,
         name: 'Ui-Images'
 
       },
       {
         path: "/ui-elements/list-groups",
-        element: <ListGroups />,
+        element: <ProtectedRoute element={<ListGroups />} />,
         name: 'Ui-Listgroup'
 
       },
       {
         path: "/ui-elements/modal",
-        element: <Modals />,
+        element: <ProtectedRoute element={<Modals />} />,
         name: 'Ui-Modal'
       },
       {
         path: "/ui-elements/notifications",
-        element: <Notifications />,
+        element: <ProtectedRoute element={<Notifications />} />,
         name: 'Ui-Notifications'
       },
       {
         path: "/ui-elements/pagination",
-        element: <Paginations />,
+        element: <ProtectedRoute element={<Paginations />} />,
         name: 'Ui-Pagination'
       },
       {
         path: "/ui-elements/popovers",
-        element: <Popovers />,
+        element: <ProtectedRoute element={<Popovers />} />,
         name: 'Ui-Popovers'
       },
       {
         path: "/ui-elements/progressbars",
-        element: <Progressbars />,
+        element: <ProtectedRoute element={<Progressbars />} />,
         name: ''
       },
       {
         path: "/ui-elements/typography",
-        element: <Typographys />,
+        element: <ProtectedRoute element={<Typographys />} />,
         name: 'Ui-Typography'
       },
       {
         path: "/ui-elements/tabs",
-        element: <UiTabs />,
+        element: <ProtectedRoute element={<UiTabs />} />,
         name: 'Ui-Tab'
 
       },
       {
         path: "/ui-elements/tooltips",
-        element: <Tooltips />,
+        element: <ProtectedRoute element={<Tooltips />} />,
         name: 'Ui-Tooltip'
 
       },
 
       {
         path: "/ui-elements/embed-video",
-        element: <EmbedVideos />,
+        element: <ProtectedRoute element={<EmbedVideos />} />,
         name: 'Ui-Embedvideo'
 
       },
       {
         path: "/form/form-element",
-        element: <FormElement />,
+        element: <ProtectedRoute element={<FormElement />} />,
         name: 'Form Elements'
       },
       {
         path: "/form/form-wizard",
-        element: <FormWizard />,
+        element: <ProtectedRoute element={<FormWizard />} />,
         name: 'Form Wizard'
       },
       {
         path: "/form/form-validation",
-        element: <FormValidation />,
+        element: <ProtectedRoute element={<FormValidation />} />,
         name: 'Form Validation'
       },
       {
         path: "/table/bootstrap-table",
-        element: <BootstrapTable />,
+        element: <ProtectedRoute element={<BootstrapTable />} />,
         name: 'Bootstrap Table'
       },
       {
         path: "/table/border-table",
-        element: <Borderedtable />,
+        element: <ProtectedRoute element={<Borderedtable />} />,
         name: 'Border Table'
       },
       {
         path: "/table/Datatable",
-        element: <Datatable />,
+        element: <ProtectedRoute element={<Datatable />} />,
         name: 'Table Data'
       },
       {
         path: "/widgetbasic",
-        element: <Widgetbasic />,
+        element: <ProtectedRoute element={<Widgetbasic />} />,
         name: 'Basic Widget'
       },
       {
         path: "/widgetchart",
-        element: <Widgetchart />,
+        element: <ProtectedRoute element={<Widgetchart />} />,
         name: 'Widgets Chart'
       },
       {
         path: "/widgetcard",
-        element: <Widgetcard />,
+        element: <ProtectedRoute element={<Widgetcard />} />,
         name: 'Widget Card'
       },
       {
         path: "/table/fixed-table",
-        element: <BasicTable />,
+        element: <ProtectedRoute element={<BasicTable />} />,
         name: 'Fixed Table'
       },
     ],
   },
   {
     path: "/",
-    element: <DashboardLayout isBanner="true" />,
+    element: <ProtectedRoute element={<DashboardLayout isBanner="true" />} />,
     children: [
       {
         path: "/tv-shows/episodes",
-        element: <Episodes />,
+        element: <ProtectedRoute element={<Episodes />} />,
         name: 'Episodes',
         Activelink: 'Tvshows'
 
       },
       {
         path: "/tv-shows/seasons",
-        element: <Seasons />,
+        element: <ProtectedRoute element={<Seasons />} />,
         name: 'Season',
         Activelink: 'Tvshows'
 
@@ -315,7 +316,7 @@ export const DashboardRouter = [
       },
       {
         path: "/tv-shows/showlist",
-        element: <ShowList />,
+        element: <ProtectedRoute element={<ShowList />} />,
         name: 'Show List',
         Activelink: 'Tvshows'
 
@@ -323,37 +324,37 @@ export const DashboardRouter = [
       },
       {
         path: "/tv-shows/movielist",
-        element: <MovieList />,
+        element: <ProtectedRoute element={<MovieList />} />,
         name: 'Movie List',
         Activelink: 'MovieList'
 
       },
       {
         path: "/extra/blank-page",
-        element: <BlankPage />,
+        element: <ProtectedRoute element={<BlankPage />} />,
         name: 'Blank Page  '
 
       },
       {
         path: "/extra/privacy-policy",
-        element: <PrivacyPolicy />,
+        element: <ProtectedRoute element={<PrivacyPolicy />} />,
         name: 'Privacy Policy  '
 
       },
       {
         path: "/extra/terms-of-use",
-        element: <TermsofService />,
+        element: <ProtectedRoute element={<TermsofService />} />,
         name: 'Terms of Use '
 
       },
       {
         path: "/font-awesome",
-        element: <FontAwesome />,
+        element: <ProtectedRoute element={<FontAwesome />} />,
         name: 'Font Awesome'
       },
       {
         path: "/access-control",
-        element: <Accesscontrol />,
+        element: <ProtectedRoute element={<Accesscontrol />} />,
         name: 'Access Control'
       }
     ],
@@ -363,23 +364,23 @@ export const DashboardRouter = [
 export const ErrorRoutes = [
   {
     path: "/errors",
-    element: <BlankLayout />,
+    element: <ProtectedRoute element={<BlankLayout />} />,
     children: [
       {
         path: "/errors/error-404",
-        element: <Error404 />,
+        element: <ProtectedRoute element={<Error404 />} />,
       },
       {
         path: "/errors/error-500",
-        element: <Error500 />,
+        element: <ProtectedRoute element={<Error500 />} />,
       },
       {
         path: "/errors/maintenance",
-        element: <Maintenance />,
+        element: <ProtectedRoute element={<Maintenance />} />,
       },
       {
         path: "/errors/coming-soon",
-        element: <ComingSoon />,
+        element: <ProtectedRoute element={<ComingSoon />} />,
       },
     ],
   },
@@ -401,12 +402,12 @@ export const AuthRuter = [
 
       {
         path: "/auth/confirm-mail",
-        element: <ConfirmMail />,
+        element: <ProtectedRoute element={<ConfirmMail />} />,
       },
 
       {
         path: "/auth/lock-screen",
-        element: <LockScreen />,
+        element: <ProtectedRoute element={<LockScreen />} />,
       },
 
       {
@@ -415,12 +416,12 @@ export const AuthRuter = [
       },
       {
         path: "/auth/two-factor",
-        element: <TwoFactor />,
+        element: <ProtectedRoute element={<TwoFactor />} />,
       },
 
       {
         path: "/auth/account-deactivate",
-        element: <AccountDeactive />,
+        element: <ProtectedRoute element={<AccountDeactive />} />,
       },
     ],
   },
