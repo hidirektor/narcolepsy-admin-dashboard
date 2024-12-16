@@ -7,17 +7,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    #volumes:
-    #  - .:/usr/src/app
     restart: unless-stopped
     ports:
       - '4567:4567'
     networks:
       - narco-network
     environment:
-      VITE_URL: ${VITE_URL}
-      VITE_API_BASE_URL: ${VITE_API_BASE_URL}
-      VITE_BASE_URL: ${VITE_BASE_URL}
+      ANGULAR_URL: ${ANGULAR_URL}
+      ANGULAR_API_BASE_URL: ${ANGULAR_API_BASE_URL}
+      ANGULAR_BASE_URL: ${ANGULAR_BASE_URL}
+      ANGULAR_CRYPTO_KEY: ${ANGULAR_CRYPTO_KEY}
 
 networks:
   narco-network:
